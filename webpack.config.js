@@ -31,7 +31,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: false,
             template: './src/index.html',
-            filename: './dist/index.html'
+            filename: 'index.html'
         }),
         new WebpackMd5Hash()
     ]
