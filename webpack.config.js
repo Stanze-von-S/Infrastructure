@@ -10,17 +10,20 @@ module.exports = {
         filename: '[name].[chunkhash].js'
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            use: { loader: "babel-loader"},
-            exclude: /node_modules/
-                },
-                {
-                    test: /\.css$/,
-                    use: [MiniCssExtractPlugin.loader, 'css-loader']
-                }
-            ]
+        rules: [
+            {
+              test: /\.js$/,
+              exclude: /node_modules/,
+              use: {
+                loader: "babel-loader"
+              }
             },
+            {
+              test: /\.css$/,
+              use:  [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] // добавили минификацию CSS
+            }
+          ]
+        },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'pages/index.[contenthash].css'
