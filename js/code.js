@@ -1,3 +1,4 @@
+import '../src/index.css';
 const objectApi = new Api(configApi);
 const addFormButton = document.querySelector('.user-info__button');
 const addFormUserButton = document.querySelector('.user-info__button-edit');
